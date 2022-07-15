@@ -57,23 +57,17 @@ taxid2name(c(562, -1), special_taxid_names = c("Unknown Microbe" = -1))
 #> "Escherichia coli"  "Unknown Microbe"
 
 # Get lineage string
-taxid2lineage(taxids = c(562, 28901))
-#>                                                                                                                                 562 
-#>   "cellular organisms>Bacteria>Proteobacteria>Gammaproteobacteria>Enterobacterales>Enterobacteriaceae>Escherichia>Escherichia coli" 
-#>                                                                                                                               28901 
-#> "cellular organisms>Bacteria>Proteobacteria>Gammaproteobacteria>Enterobacterales>Enterobacteriaceae>Salmonella>Salmonella enterica"
+taxid2lineage(taxids = c(562))
+#>                                                                                                                               562 
+#> "cellular organisms>Bacteria>Proteobacteria>Gammaproteobacteria>Enterobacterales>Enterobacteriaceae>Escherichia>Escherichia coli"
 
 # Get lineage string with ranks shown
-taxid2lineage(taxids = c(562, 28901), show_ranks = TRUE)
-#>                                                                                                                                                                                                              562 
-#>   "cellular organisms (no rank)>Bacteria (superkingdom)>Proteobacteria (phylum)>Gammaproteobacteria (class)>Enterobacterales (order)>Enterobacteriaceae (family)>Escherichia (genus)>Escherichia coli (species)" 
-#>                                                                                                                                                                                                            28901 
-#> "cellular organisms (no rank)>Bacteria (superkingdom)>Proteobacteria (phylum)>Gammaproteobacteria (class)>Enterobacterales (order)>Enterobacteriaceae (family)>Salmonella (genus)>Salmonella enterica (species)"
+taxid2lineage(taxids = c(562), show_ranks = TRUE)
+#>                                                                                                                                                                                                            562 
+#> "cellular organisms (no rank)>Bacteria (superkingdom)>Proteobacteria (phylum)>Gammaproteobacteria (class)>Enterobacterales (order)>Enterobacteriaceae (family)>Escherichia (genus)>Escherichia coli (species)"
 
 # Customise which rank levels are included in lineage
-taxid2lineage(taxids = c(562, 28901), ranks_to_include = c("superkingdom","genus", "species"))
-#>                                       562 
-#>   "Bacteria>Escherichia>Escherichia coli" 
-#>                                     28901 
-#> "Bacteria>Salmonella>Salmonella enterica"
+taxid2lineage(taxids = c(562), ranks_to_include = c("superkingdom","genus", "species"))
+#>                                     562 
+#> "Bacteria>Escherichia>Escherichia coli"
 ```
