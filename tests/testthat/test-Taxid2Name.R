@@ -5,11 +5,14 @@ test_that("taxid2name works", {
   expect_length(taxid2name(561), n = 1)
   expect_length(taxid2name(c(561, 562)), n = 2)
 
+
   expect_error(taxid2name(-1000))
   expect_error(taxid2name(-1000, special_taxid_names = c("minus_1000" = -1000)), NA)
   expect_equal(ignore_attr = TRUE, taxid2name(-1000, special_taxid_names = c("minus_1000" = -1000)), expected = "minus_1000")
   expect_equal(ignore_attr = TRUE, taxid2name(c(-1000, -20), special_taxid_names = c("minus_1000" = -1000, "minus_20" = -20)), expected = c("minus_1000", "minus_20"))
   expect_error(taxid2name(c(-1000, 561), special_taxid_names = c("minus_1000" = -1000)), NA)
+
+  expect_error(taxid2lineage(Inf), "valid")
 
 })
 
@@ -19,6 +22,7 @@ test_that("taxid2lineage works", {
   expect_error(taxid2lineage(561), NA)
   expect_error(taxid2lineage(561, show_ranks = FALSE), NA)
   expect_error(taxid2lineage(561, show_ranks = TRUE), NA)
+  expect_error(taxid2lineage(Inf), "valid")
 
   expect_length(taxid2lineage(c(561, 562)), n = 2)
   expect_true(grepl(taxid2lineage(561, ultimate_ancestor = "UltimateAncestor"), pattern = "^UltimateAncestor>"))
