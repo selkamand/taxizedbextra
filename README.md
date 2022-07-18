@@ -32,13 +32,13 @@ devtools::install_github("selkamand/taxizedbextra")
 ### Download ncbi taxonomic database
 
 ``` r
-library(taxizedb)
+library(taxizedbextra)
 
 ## download ncbi taxonomy database (just over 2gb) (only run this once)
 db_download_ncbi()
 
 # Check where database was downloaded
-print(tdb_cache)
+locate_taxonomy_cache()
 ```
 
 ### Use taxizedbextra functions

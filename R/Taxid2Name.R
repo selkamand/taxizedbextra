@@ -137,3 +137,24 @@ taxid2lineage <- function(taxids, ranks_to_include = c("no rank", "superkingdom"
 
   return(lineage)
 }
+
+
+
+# TaxizeDB direct Wrappers ------------------------------------------------
+
+
+
+
+#' @export
+#' @inherit taxizedb::db_download_ncbi
+db_download_ncbi <- function(overwrite = TRUE) { taxizedb::db_download_ncbi(overwrite = overwrite) }
+
+#' Locate taxonomic cache
+#'
+#' Find where [db_download_ncbi()] downloads the taxonomy database to
+#'
+#' @export
+locate_taxonomy_cache <- function(){
+  taxizedb::tdb_cache
+}
+
