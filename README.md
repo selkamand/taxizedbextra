@@ -7,11 +7,12 @@
 
 [![Codecov test
 coverage](https://codecov.io/gh/selkamand/taxizedbextra/branch/master/graph/badge.svg)](https://app.codecov.io/gh/selkamand/taxizedbextra?branch=master)
+
 <!-- badges: end -->
 
 taxizedbextra wraps provides some convenience wrappers and extra utility
-for taxizedb database. It assumes all taxids (taxonomyIDs) are from the
-ncbi taxonomy database.
+for the [taxizedb package](https://github.com/ropensci/taxizedb). It
+assumes all taxids (taxonomyIDs) are from the ncbi taxonomy database.
 
 Functions provided are optimized for long vectors with lots of repeated
 elements. They also allow users to input taxids \<=0 so long as they
